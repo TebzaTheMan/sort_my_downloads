@@ -41,19 +41,20 @@ def create_folder(name):
 
 def sort_file(file_path):
     ext = os.path.splitext(file_path)[1][1:].lower()
+    filename = Path(file_path).name
     for name , exts in folder_extensions.items():
         if ext in exts:
             if os.path.exists(f"{downloads_folder}/{name}"):
                 try:
                     shutil.move(file_path,f"{downloads_folder}/{name}")
                 except:
-                    print(f"error occured while moving {Path(file_path).name} to {name}")
+                    print(f"error occured while moving {filename} to {name}")
             else:
                 create_folder(name)
                 try:
                     shutil.move(file_path,f"{downloads_folder}/{name}")
                 except:
-                    print(f"error occured while moving {Path(file_path).name} to {name}")
+                    print(f"error occured while moving {filename} to {name}")
 
 
 def sort_files():
