@@ -32,15 +32,6 @@ def get_only_files_in_dir ():
 
 files_only = get_only_files_in_dir()
 
-def get_all_file_extensions ():
-    print("getting file extensions")
-    found_exts = []
-    for filename in files_only:
-        ext = os.path.splitext(filename)[1][1:].lower()
-        found_exts.append(ext)
-    unique_exts = list(set(found_exts))
-    return unique_exts
-
 def create_folder(name):
     path =  os.path.join(downloads_folder,name)
     try:
@@ -70,10 +61,9 @@ def sort_files():
     print("moving files")
     for filename in files_only:
         sort_file(filename)
+    print("Done")
 
 sort_files()
-
-print("Done")
 
 
 def on_created(event):
@@ -88,7 +78,7 @@ if __name__ == "__main__":
     my_event_handler = PatternMatchingEventHandler(patterns, ignore_patterns, ignore_directories, case_sensitive)
     my_event_handler.on_created = on_created
     my_event_handler.on_modified = on_created
-    go_recursively = False
+    go_recursively = False  
     my_observer = Observer()
     my_observer.schedule(my_event_handler,downloads_folder, recursive=go_recursively)
     my_observer.start()
