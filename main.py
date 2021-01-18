@@ -39,38 +39,35 @@ def create_folder(name):
     except OSError:
         print(f"{name} folder already exists.")
 
-def sort_file(filename):
-    file_path = f"{downloads_folder}/{filename}"
-    ext = os.path.splitext(filename)[1][1:].lower()
+def sort_file(file_path):
+    ext = os.path.splitext(file_path)[1][1:].lower()
     for name , exts in folder_extensions.items():
         if ext in exts:
             if os.path.exists(f"{downloads_folder}/{name}"):
                 try:
                     shutil.move(file_path,f"{downloads_folder}/{name}")
                 except:
-                    print(f"error occured while moving {filename} to folder {name}")
+                    print(f"error occured while moving {Path(file_path).name} to {name}")
             else:
                 create_folder(name)
                 try:
                     shutil.move(file_path,f"{downloads_folder}/{name}")
                 except:
-                    print(f"error occured while moving {filename} to folder {name}")
+                    print(f"error occured while moving {Path(file_path).name} to {name}")
 
 
 def sort_files():
     print("moving files")
     for filename in files_only:
-        sort_file(filename)
+        sort_file(f"{downloads_folder}/{filename}")
     print("Done")
 
 sort_files()
 
-
 def on_created(event):
-    sort_file(Path(event.src_path).name)
+    sort_file(event.src_path)
 
 if __name__ == "__main__":
-
     patterns = "*"
     ignore_patterns = [".DS_Store"]
     ignore_directories = True
@@ -91,7 +88,6 @@ if __name__ == "__main__":
         my_observer.stop()
         print(" Stopped watching files.")
     my_observer.join() 
-
 
 '''
 fix bug when modifying files in sub folders of the test_folders
