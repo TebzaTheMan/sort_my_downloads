@@ -47,13 +47,13 @@ def move_file (file_path,dest):
 
 def sort_file(file_path):
     ext = os.path.splitext(file_path)[1][1:].lower()
-    for name , exts in folder_extensions.items():
+    for folder_name , exts in folder_extensions.items():
         if ext in exts:
-            if os.path.exists(f"{downloads_folder}/{name}"):
-                move_file(file_path,name)
+            if os.path.exists(f"{downloads_folder}/{folder_name}"):
+                move_file(file_path,folder_name)
             else:
                 create_folder(name)
-                move_file(file_path,name)
+                move_file(file_path,folder_name)
 
 
 def sort_files():
