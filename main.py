@@ -64,7 +64,7 @@ def sort_files():
 
 sort_files()
 
-def on_created(event):
+def on_created(event):  
     sort_file(event.src_path)
 
 if __name__ == "__main__":
@@ -72,12 +72,12 @@ if __name__ == "__main__":
     ignore_patterns = [".DS_Store"]
     ignore_directories = True
     case_sensitive = True
-    my_event_handler = PatternMatchingEventHandler(patterns, ignore_patterns, ignore_directories, case_sensitive)
-    my_event_handler.on_created = on_created
-    my_event_handler.on_modified = on_created
+    event_handler = PatternMatchingEventHandler(patterns, ignore_patterns, ignore_directories, case_sensitive)
+    event_handler.on_created = on_created
+    event_handler.on_modified = on_created
     go_recursively = False  
     my_observer = Observer()
-    my_observer.schedule(my_event_handler,downloads_folder, recursive=go_recursively)
+    my_observer.schedule(event_handler,downloads_folder, recursive=go_recursively)
     my_observer.start()
 
     print("Watching new files...")
