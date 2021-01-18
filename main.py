@@ -39,22 +39,21 @@ def create_folder(name):
     except OSError:
         print(f"{name} folder already exists.")
 
+def move_file (file_path,dest):
+    try:
+        shutil.move(file_path,f"{downloads_folder}/{dest}")
+    except:
+        print(f"error occured while moving {Path(file_path).name} to {dest}")
+
 def sort_file(file_path):
     ext = os.path.splitext(file_path)[1][1:].lower()
-    filename = Path(file_path).name
     for name , exts in folder_extensions.items():
         if ext in exts:
             if os.path.exists(f"{downloads_folder}/{name}"):
-                try:
-                    shutil.move(file_path,f"{downloads_folder}/{name}")
-                except:
-                    print(f"error occured while moving {filename} to {name}")
+                move_file(file_path,name)
             else:
                 create_folder(name)
-                try:
-                    shutil.move(file_path,f"{downloads_folder}/{name}")
-                except:
-                    print(f"error occured while moving {filename} to {name}")
+                move_file(file_path,name)
 
 
 def sort_files():
