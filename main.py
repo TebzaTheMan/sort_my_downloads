@@ -25,7 +25,7 @@ def get_only_files_in_dir ():
     print("getting files")
     files_only = []
     for filename in directory:
-        file = "{}/{}".format(downloads_folder,filename)
+        file = f"{downloads_folder}/{filename}"
         if os.path.isfile(file):
             files_only.append(filename)
     return files_only
@@ -37,7 +37,7 @@ def create_folder(name):
     try:
         os.mkdir(path)
     except OSError:
-        print("{} folder already exists.".format(name))
+        print(f"{name} folder already exists.")
 
 def sort_file(filename):
     file_path = f"{downloads_folder}/{filename}"
@@ -89,6 +89,11 @@ if __name__ == "__main__":
             time.sleep(1)
     except KeyboardInterrupt:
         my_observer.stop()
-        print("Stopped watching files.")
+        print(" Stopped watching files.")
     my_observer.join() 
 
+
+'''
+fix bug when modifying files in sub folders of the test_folders
+trigerring a new_file_created function.
+'''
