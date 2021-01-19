@@ -52,7 +52,7 @@ def sort_file(file_path):
             if os.path.exists(f"{downloads_folder}/{folder_name}"):
                 move_file(file_path,folder_name)
             else:
-                create_folder(name)
+                create_folder(folder_name)
                 move_file(file_path,folder_name)
 
 
