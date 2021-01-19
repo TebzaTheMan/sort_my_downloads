@@ -75,9 +75,8 @@ if __name__ == "__main__":
     event_handler = PatternMatchingEventHandler(patterns, ignore_patterns, ignore_directories, case_sensitive)
     event_handler.on_created = on_created
     event_handler.on_modified = on_created
-    go_recursively = False  
     my_observer = Observer()
-    my_observer.schedule(event_handler,downloads_folder, recursive=go_recursively)
+    my_observer.schedule(event_handler,downloads_folder, recursive=False)
     my_observer.start()
 
     print("Watching new files...")
@@ -87,7 +86,8 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         my_observer.stop()
         print(" Stopped watching files.")
-    my_observer.join() 
+    finally:
+        my_observer.join() 
 
 '''
 fix bug when modifying files in sub folders of the test_folders
