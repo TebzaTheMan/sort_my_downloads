@@ -30,8 +30,6 @@ def get_only_files_in_dir ():
             files_only.append(filename)
     return files_only
 
-files_only = get_only_files_in_dir()
-
 def create_folder(name):
     path =  os.path.join(downloads_folder,name)
     try:
@@ -55,14 +53,13 @@ def sort_file(file_path):
                 create_folder(folder_name)
                 move_file(file_path,folder_name)
 
-
-def sort_files():
+def sort_files(files):
     print("moving files")
-    for filename in files_only:
+    for filename in files:
         sort_file(f"{downloads_folder}/{filename}")
     print("Done")
 
-sort_files()
+sort_files(get_only_files_in_dir())
 
 def on_created(event):  
     sort_file(event.src_path)
