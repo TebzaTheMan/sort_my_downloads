@@ -1,6 +1,7 @@
 import os
 import shutil
 import time
+import sys
 from pathlib import Path  
 from watchdog.observers import Observer
 from watchdog.events import PatternMatchingEventHandler
@@ -85,9 +86,14 @@ def watch_files ():
         my_observer.join()
 
 if __name__ == "__main__":
-    sort_files(get_only_files_in_dir())
-    watch_files()
-'''
-fix bug when modifying files in sub folders of the test_folders
-trigerring a new_file_created function.
-'''
+    if len(sys.argv) > 1:
+        action = sys.argv[1]
+        if action == "sort-and-watch":
+            sort_files(get_only_files_in_dir())
+            watch_files()
+        elif action == "watch-only":
+            watch_files()
+        else:
+            sort_files(get_only_files_in_dir())
+    else:
+        sort_files(get_only_files_in_dir())
