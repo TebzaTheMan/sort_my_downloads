@@ -59,12 +59,10 @@ def sort_files(files):
         sort_file(f"{downloads_folder}/{filename}")
     print("Done")
 
-sort_files(get_only_files_in_dir())
-
 def on_created(event):  
     sort_file(event.src_path)
 
-if __name__ == "__main__":
+def watch_files ():
     patterns = "*"
     ignore_patterns = [".DS_Store"]
     ignore_directories = True
@@ -84,8 +82,11 @@ if __name__ == "__main__":
         my_observer.stop()
         print(" Stopped watching files.")
     finally:
-        my_observer.join() 
+        my_observer.join()
 
+if __name__ == "__main__":
+    sort_files(get_only_files_in_dir())
+    watch_files()
 '''
 fix bug when modifying files in sub folders of the test_folders
 trigerring a new_file_created function.
