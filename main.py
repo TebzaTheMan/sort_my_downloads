@@ -40,8 +40,8 @@ def create_folder(name):
 def move_file (file_path,dest):
     try:
         shutil.move(file_path,f"{downloads_folder}/{dest}")
-    except:
-        print(f"error occured while moving {Path(file_path).name} to {dest}")
+    except shutil.Error as error:
+        print(f"Error:{error}")
 
 def sort_file(file_path):
     ext = os.path.splitext(file_path)[1][1:].lower()
