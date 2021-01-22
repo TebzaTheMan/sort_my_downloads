@@ -48,10 +48,11 @@ def create_folder(name):
         print(f"{name} folder already exists.")
 
 def move_file (file_path,dest):
-    try:
-        shutil.move(file_path,dest)
-    except shutil.Error as error:
-        print(f"Error: {error}")
+    if not os.path.exists(f"{dest}/{Path(file_path).name}"):
+        try:
+            shutil.move(file_path,dest)
+        except shutil.Error as error:
+            print(f"Error: {error}")
 
 def sort_file(file_path):
     ext = os.path.splitext(file_path)[1][1:].lower()
@@ -82,7 +83,7 @@ def watch_files ():
     event_handler.on_created = on_created
     event_handler.on_modified = on_created
     my_observer = Observer()
-    my_observer.schedule(event_handler,downloads_folder, recursive=False)
+    my_observer.schedule(event_handler,downloads_folder)
     my_observer.start()
 
     print("Watching new files...")
