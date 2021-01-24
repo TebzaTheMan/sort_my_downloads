@@ -8,15 +8,15 @@ from watchdog.events import PatternMatchingEventHandler
 
 # File extensions according to their folder type
 folder_extensions = {
-    'Documents' : ("doc","docx","html","htm","odt","pdf","xls","xlsx","ods","ppt" "pptx","txt"),
+    'Documents' : ("doc","docx","html","htm","odt","pdf","xls","xlsx","ods","ppt" "pptx","txt","csv","dotx","pgn"),
     'Images' : ("jpg","png","gif","webp","tiff","psd","raw","bmp","heif","indd","jpeg"),
     'Vector Images' : ("svg","ai","eps"),
     'Music' : ("mp3","m4a","aac","oga","flac","wav","pcm","aiff"),
     'Video' : ("webm","mpg","mp2","mpeg","mpe","mpv","ogg","mp4","m4p","m4v","avi","wmv","mov","qt","flv","swf","avchd"),
-    'Compressed' : ("7z","arj","deb","pkg","rar","rpm","tar.gz","z","zip"),
+    'Compressed' : ("7z","arj","deb","pkg","rar","rpm","tar.gz","z","zip","tgz"),
     'Disc Images' : ("dmg","iso","toast","vcd"),
-    'Executables' : ("apk","bat","bin","cgi","pl","exe","jar","msi","py","wsf"),
-    'fonts' : ("fnt","fon","otf","ttf"),
+    'Executables' : ("apk","bat","bin","cgi","pl","exe","jar","msi","py","wsf","app"),
+    'Fonts' : ("fnt","fon","otf","ttf"),
 }
 def get_download_path():
     if os.name == 'nt':
