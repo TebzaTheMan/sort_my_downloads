@@ -1,4 +1,4 @@
-# Sort-My-Downloads
+# sort-my-downloads
 
 A Python script to sort your downloaded files into categorised folders.
 
@@ -7,7 +7,7 @@ A Python script to sort your downloaded files into categorised folders.
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install Sort-My-Downloads.
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install sort-my-downloads.
 
 ```bash
 pip install sort-my-downloads
