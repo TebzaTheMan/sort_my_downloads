@@ -31,7 +31,7 @@ sort-my-downloads sort-and-watch
 
 | Folder  | File extension  |
 |---|---|
-|  Documents |  doc , docx , html , htm , odt , pdf , xls , xlsx , ods , ppt   pptx , txt , csv , dotx , pgn   |
+|  Documents |  doc , docx , html , htm , odt , pdf , xls , xlsx , ods , ppt , pptx , txt , csv , dotx , pgn   |
 | Images  |  jpg , png , gif , webp , tiff , psd , raw , bmp , heif , indd , jpeg   |
 | Vector Images  |  svg , ai , eps , pdf   |
 |  Music |  mp3 , m4a , aac , oga , flac , wav , pcm , aiff |
