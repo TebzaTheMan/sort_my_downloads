@@ -40,6 +40,7 @@ sort-my-downloads sort-and-watch
 |  Disc Images |  dmg , iso , toast , vcd   |
 | Executables  |  apk , bat , bin , cgi , pl , exe , jar , msi , py , wsf , app   |
 |Fonts| fnt , fon , otf , ttf |
+|Other| all other files that are not in above folders. |
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
