@@ -6,8 +6,6 @@ from pathlib import Path
 from watchdog.observers import Observer
 from watchdog.events import PatternMatchingEventHandler
 
-downloads_folder = "/users/Tebza/Desktop/test_folder"
-
 # File extensions according to their folder type
 folder_extensions = {
     'Documents' : ("doc","docx","html","htm","odt","pdf","xls","xlsx","ods","ppt" "pptx","txt"),
@@ -30,6 +28,8 @@ def get_download_path():
         return location
     else:
         return str(Path.home() / "Downloads")
+
+downloads_folder = get_download_path()
 
 def get_only_files_in_dir ():
     print("getting files")
