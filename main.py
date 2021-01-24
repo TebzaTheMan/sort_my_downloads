@@ -64,6 +64,14 @@ def sort_file(file_path):
             else:
                 create_folder(folder_name)
                 move_file(file_path,dest)
+        else:
+            other_folder = f"{downloads_folder}/Other"
+            if os.path.exists(other_folder):
+                move_file(file_path,other_folder)
+            else:
+                create_folder("Other")
+                move_file(file_path,other_folder)
+
 
 def sort_files(files):
     print("moving files")
