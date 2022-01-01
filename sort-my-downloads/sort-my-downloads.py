@@ -104,7 +104,7 @@ def watch_files ():
     finally:
         my_observer.join()
 
-if __name__ == "__main__":
+def main():
     if len(sys.argv) > 1:
         action = sys.argv[1]
         if action == "sort-and-watch":
@@ -123,3 +123,6 @@ if __name__ == "__main__":
             print("Incorrect action requested.Type in 'sort-my-downloads help' for more information on how to use program.")
     else:
         sort_files(get_only_files_in_dir())
+
+if __name__ == "__main__":
+    main()

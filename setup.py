@@ -1,5 +1,5 @@
 import pathlib
-from setuptools import setup
+from setuptools import setup, find_packages
 
 # The directory containing this file
 HERE = pathlib.Path(__file__).parent
@@ -21,7 +21,12 @@ setup(
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.8",
     ],
-    packages=["sort-my-downloads"],
+    packages= find_packages(),
+    entry_points ={ 
+    'console_scripts': [ 
+      'sort-my-downloads = sort-my-downloads.sort-my-downlaods:main'
+    ] 
+  }, 
     include_package_data=True,
     install_requires=["watchdog"],
 )
