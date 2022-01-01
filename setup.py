@@ -8,7 +8,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name="sort-my-downloads",
-    version="0.0.1",
+    version="0.0.4",
     description="Sort your downloaded files into differecnt file categories.",
     long_description=README,
     long_description_content_type="text/markdown",

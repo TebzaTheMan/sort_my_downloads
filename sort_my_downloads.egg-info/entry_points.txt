@@ -1,0 +1,3 @@
+[console_scripts]
+sort_my_downloads = sort_my_downloads.sort_my_downlaods:main
+
