@@ -24,7 +24,7 @@ setup(
     packages= find_packages(),
     entry_points ={ 
     'console_scripts': [ 
-      'sort-my-downloads = sort-my-downloads.sort-my-downlaods:main'
+      'sort_my_downloads = sort_my_downloads.sort_my_downlaods:main'
     ] 
   }, 
     include_package_data=True,
