@@ -7,12 +7,12 @@ HERE = pathlib.Path(__file__).parent
 README = (HERE / "README.md").read_text()
 
 setup(
-    name="sort-my-downloads",
-    version="0.0.5",
-    description="Sort your downloaded files into differecnt file categories.",
+    name="sort_my_downloads",
+    version="0.0.6",
+    description="Sort your downloaded files into categorised folders.",
     long_description=README,
     long_description_content_type="text/markdown",
-    url="https://github.com/TebzaTheMan/sort-my-downloads",
+    url="https://github.com/TebzaTheMan/sort_my_downloads",
     author="Tebogo Nomnqa",
     author_email="tebzax2@gmail.com",
     license="MIT",

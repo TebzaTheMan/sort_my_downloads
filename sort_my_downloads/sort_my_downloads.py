@@ -122,7 +122,7 @@ def watch_files():
 def main():
     if len(sys.argv) > 1:
         action = sys.argv[1]
-        if action == "sort-and-watch":
+        if action == "sort_and_watch":
             sort_files(get_only_files_in_dir())
             watch_files()
         elif action == "watch":
@@ -131,13 +131,13 @@ def main():
             sort_files(get_only_files_in_dir())
         elif action == "help":
             print("Help \n")
-            print("sort-my-downloads sort - will sort your downloads ")
+            print("sort_my_downloads sort - will sort your downloads ")
             print(
-                "sort-my-downloads watch - will only watch and sort new files you download")
+                "sort_my_downloads watch - will only watch and sort new files you download")
             print(
-                "sort-my-downloads sort-and-watch - will start by sorting your downloads and start file watcher")
+                "sort_my_downloads sort-and-watch - will start by sorting your downloads and start file watcher")
         else:
-            print("Incorrect action requested.Type in 'sort-my-downloads help' for more information on how to use program.")
+            print("Incorrect action requested.Type in 'sort_my_downloads help' for more information on how to use program.")
     else:
         sort_files(get_only_files_in_dir())
 
