@@ -8,7 +8,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name="sort-my-downloads",
-    version="0.0.4",
+    version="0.0.5",
     description="Sort your downloaded files into differecnt file categories.",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -21,12 +21,12 @@ setup(
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.8",
     ],
-    packages= find_packages(),
-    entry_points ={ 
-    'console_scripts': [ 
-      'sort_my_downloads = sort_my_downloads.sort_my_downlaods:main'
-    ] 
-  }, 
+    packages=find_packages(),
+    entry_points={
+        'console_scripts': [
+            'sort_my_downloads = sort_my_downloads.sort_my_downloads:main'
+        ]
+    },
     include_package_data=True,
     install_requires=["watchdog"],
 )
